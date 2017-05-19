@@ -1,0 +1,106 @@
+
+@if not (variable-exists('grid-row-width'))
+{
+  body {
+    background: red;
+  }
+}
+
+@if (variable-exists('global-flexbox'))
+{
+  @if ($global-flexbox)
+  {
+    #responsive-menu
+    {
+      display: flex;
+      width: 100%;
+    }
+  }
+}
+
+[data-todo]:empty:before{
+  display: block;
+  content: attr(data-todo);
+  background-color: lightgray;
+  border: 2px dotted black;
+  text-align: center;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+[data-component="jumbotron"]:empty:before {
+  padding: 50px 0;
+}
+
+[data-component="panel"]:empty:before {
+  padding: 100px 0;
+  background-color: lightblue;
+}
+
+[data-component="media-object"]:empty:before {
+  padding: 150px 0;
+}
+
+[data-component="page-header"]:empty:before {
+  background-color: #fff;
+}
+
+[data-component="breadcrumbs"]:empty:before {
+  padding: 5px 0;
+  background-color: #eee;
+}
+
+[data-component="pagination"]:empty:before {
+  padding: 5px 0;
+  background-color: #eee;
+}
+
+[data-component="comment-form"]:empty:before {
+  padding: 30px 0;
+  background-color: #efefef;
+}
+
+[data-component="navbar-inverse"]:empty:before {
+  padding: 20px 0;
+  background-color: #666;
+  color: white;
+}
+
+[data-component="thumbnail"]:empty:before {
+  padding: 80px 0;
+}
+
+body:after {
+  position: fixed;
+  display: block;
+  content: 'xs';
+  padding: 5px 20px;
+  bottom: 0;
+  left: 0;
+  font-size: 24px;
+  text-align: center;
+  background-color: lightgray;
+  border: 1px solid black;
+}
+
+@media screen and (min-width: 768px){
+  body:after {
+    content: 'sm';
+  }
+}
+
+@media screen and (min-width: 992px){
+  body:after {
+    content: 'md';
+  }
+}
+
+@media screen and (min-width: 1200px){
+  body:after {
+    content: 'lg';
+  }
+}
+
+.navigator {
+  background: #e6e6e6;
+}
